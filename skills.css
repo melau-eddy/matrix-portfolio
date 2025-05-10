@@ -1,0 +1,703 @@
+/* Quantum Interface Styling */
+:root {
+    --quantum-blue: #00f0ff;
+    --matrix-green: #00ff41;
+    --neon-pink: #ff2d75;
+    --cyber-purple: #9d00ff;
+    --dark-matter: #0a0a12;
+    --star-dust: rgba(255,255,255,0.1);
+    --terminal-bg: rgba(10,10,20,0.95);
+}
+
+body {
+    background-color: var(--dark-matter);
+    color: var(--matrix-green);
+    font-family: 'JetBrains Mono', monospace;
+    overflow-x: hidden;
+}
+
+/* Neuro-Interface Header */
+.neuro-header {
+    text-align: center;
+    padding: 3rem 0;
+    position: relative;
+    overflow: hidden;
+    background: 
+        radial-gradient(circle at center, 
+            rgba(0,240,255,0.1) 0%, 
+            transparent 70%);
+    border-bottom: 1px solid var(--quantum-blue);
+}
+
+.neuro-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--quantum-blue);
+    text-shadow: 0 0 20px rgba(0,240,255,0.7);
+    position: relative;
+    z-index: 2;
+    animation: neuro-pulse 4s infinite alternate;
+}
+
+.circuit-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(var(--star-dust) 1px, transparent 1px),
+        linear-gradient(90deg, var(--star-dust) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.neon-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, 
+        rgba(0,240,255,0.3) 0%, 
+        transparent 70%);
+    border-radius: 50%;
+    animation: neon-pulse 6s infinite alternate;
+    z-index: 0;
+}
+
+/* Quantum Dashboard Layout */
+.quantum-dashboard {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+/* 3D Tech Sphere */
+.tech-sphere-container {
+    position: relative;
+    height: 600px;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--quantum-blue);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0,240,255,0.2);
+}
+
+#tech-sphere {
+    width: 100%;
+    height: 100%;
+}
+
+.sphere-interface {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.7);
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid var(--neon-pink);
+}
+
+.sphere-control {
+    margin-bottom: 10px;
+}
+
+.control-label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--matrix-green);
+    font-size: 0.8rem;
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 4px;
+    background: var(--star-dust);
+    -webkit-appearance: none;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: var(--quantum-blue);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--quantum-blue);
+}
+
+/* Skill Matrix Grid */
+.skill-matrix {
+    background: var(--terminal-bg);
+    border: 1px solid var(--quantum-blue);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 40px rgba(0,240,255,0.1);
+}
+
+.matrix-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0,240,255,0.3);
+}
+
+.matrix-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: var(--quantum-blue);
+    letter-spacing: 1px;
+}
+
+.matrix-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-label {
+    color: var(--matrix-green);
+    font-size: 0.9rem;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid var(--matrix-green);
+    color: var(--matrix-green);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--matrix-green);
+    color: black;
+}
+
+.matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Skill Card */
+.skill-card {
+    background: rgba(10,10,20,0.7);
+    border: 1px solid rgba(0,240,255,0.2);
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, 
+        rgba(0,240,255,0.1) 0%, 
+        transparent 70%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,240,255,0.2);
+    border-color: var(--quantum-blue);
+}
+
+.skill-card:hover::before {
+    opacity: 1;
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    color: var(--quantum-blue);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.icon-halo {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid var(--quantum-blue);
+    border-radius: 50%;
+    opacity: 0;
+    animation: halo-pulse 2s infinite;
+}
+
+.skill-card:hover .icon-halo {
+    opacity: 0.5;
+}
+
+.skill-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.skill-bar {
+    height: 6px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, 
+        var(--quantum-blue), 
+        var(--matrix-green));
+    border-radius: 3px;
+    position: relative;
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0.8), 
+        rgba(255,255,255,0.2));
+    animation: skill-glow 2s infinite;
+}
+
+.skill-percent {
+    position: absolute;
+    right: 0;
+    top: -20px;
+    font-size: 0.8rem;
+    color: var(--matrix-green);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tag {
+    background: rgba(0,240,255,0.1);
+    color: var(--quantum-blue);
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.7rem;
+}
+
+/* Neural Network Visualization */
+.neural-network {
+    grid-column: 1 / -1;
+    background: var(--terminal-bg);
+    border: 1px solid var(--quantum-blue);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 2rem;
+    box-shadow: 0 0 40px rgba(0,240,255,0.1);
+}
+
+.network-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.network-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: var(--quantum-blue);
+    letter-spacing: 1px;
+}
+
+.network-legend {
+    display: flex;
+    gap: 15px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem;
+    color: var(--matrix-green);
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.legend-dot.frontend { background: var(--quantum-blue); }
+.legend-dot.backend { background: var(--neon-pink); }
+.legend-dot.cyber { background: var(--matrix-green); }
+
+#neural-canvas {
+    width: 100%;
+    height: 400px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+
+/* DNA Strand Footer */
+.dna-footer {
+    margin-top: 4rem;
+    padding: 3rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.dna-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    height: 200px;
+}
+
+.dna-strand {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.dna-node {
+    width: 30px;
+    height: 30px;
+    background: var(--quantum-blue);
+    border-radius: 50%;
+    margin-top: 85px;
+    position: relative;
+    box-shadow: 0 0 20px var(--quantum-blue);
+    animation: dna-float 4s infinite ease-in-out;
+}
+
+.dna-node:nth-child(odd) {
+    background: var(--neon-pink);
+    box-shadow: 0 0 20px var(--neon-pink);
+    animation-delay: 0.5s;
+}
+
+.dna-node:nth-child(3n) {
+    background: var(--matrix-green);
+    box-shadow: 0 0 20px var(--matrix-green);
+    animation-delay: 1s;
+}
+
+.dna-connectors {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+}
+
+.dna-connectors::before {
+    content: '';
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(0,240,255,0.3);
+}
+
+.dna-label {
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--quantum-blue);
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+}
+
+/* Cyber Console */
+.cyber-console {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10,10,20,0.9);
+    border-top: 1px solid var(--quantum-blue);
+    box-shadow: 0 -5px 30px rgba(0,240,255,0.2);
+    z-index: 1000;
+    transform: translateY(calc(100% - 40px));
+    transition: transform 0.3s ease;
+}
+
+.cyber-console.active {
+    transform: translateY(0);
+}
+
+.console-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.console-title {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--matrix-green);
+    font-size: 0.9rem;
+}
+
+.console-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.console-controls .control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.control.minimize { background: var(--matrix-green); }
+.control.maximize { background: var(--quantum-blue); }
+.control.close { background: var(--neon-pink); }
+
+.console-body {
+    padding: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.console-output {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--matrix-green);
+    line-height: 1.5;
+    margin-bottom: 15px;
+    white-space: pre-wrap;
+}
+
+.console-input {
+    display: flex;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.prompt {
+    color: var(--quantum-blue);
+    margin-right: 10px;
+}
+
+#console-cmd {
+    background: transparent;
+    border: none;
+    color: var(--matrix-green);
+    font-family: 'JetBrains Mono', monospace;
+    flex: 1;
+    outline: none;
+    caret-color: var(--quantum-blue);
+}
+
+
+
+
+
+:root {
+    --cyber-blue: #00f0ff;
+    --cyber-pink: #ff2d75;
+    --cyber-purple: #9d00ff;
+    --matrix-green: #00ff41;
+    --dark-bg: #0a0a12;
+}
+
+
+/* Cyber Button */
+.cyber-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--cyber-blue);
+    border: 1px solid var(--cyber-blue);
+    font-family: 'Share Tech Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.cyber-button:hover {
+    background: rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 10px var(--cyber-blue);
+}
+
+.button-glitch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--cyber-pink),
+        var(--cyber-purple),
+        transparent
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cyber-button:hover .button-glitch {
+    opacity: 0.2;
+    animation: glitch-effect 1s infinite;
+}
+
+/* Animations */
+@keyframes glitch {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+}
+
+@keyframes glitch-effect {
+    0% { transform: translate(0); clip-path: inset(0 0 0 0); }
+    20% { transform: translate(-5px, 5px); clip-path: inset(20% 0 60% 0); }
+    40% { transform: translate(5px, -5px); clip-path: inset(10% 0 30% 0); }
+    60% { transform: translate(-5px, 5px); clip-path: inset(40% 0 20% 0); }
+    80% { transform: translate(5px, -5px); clip-path: inset(10% 0 60% 0); }
+    100% { transform: translate(0); clip-path: inset(0 0 0 0); }
+}
+
+@keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+}
+
+@keyframes hologram-pulse {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.7; }
+}
+
+@keyframes hologram-scan {
+    0% { top: -100%; }
+    100% { top: 100%; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .glitch-text {
+        font-size: 2rem;
+    }
+    
+    .terminal-window {
+        width: 95%;
+    }
+    
+    .hexagon {
+        width: 100px;
+        height: 120px;
+    }
+}
+
+
+/* Animations */
+@keyframes neuro-pulse {
+    0% { opacity: 0.8; text-shadow: 0 0 10px var(--quantum-blue); }
+    100% { opacity: 1; text-shadow: 0 0 30px var(--quantum-blue); }
+}
+
+@keyframes neon-pulse {
+    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.3; }
+    100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.6; }
+}
+
+@keyframes halo-pulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.3; }
+    100% { transform: scale(1); opacity: 0.5; }
+}
+
+@keyframes skill-glow {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes dna-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .quantum-dashboard {
+        grid-template-columns: 1fr;
+    }
+    
+    .tech-sphere-container {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .neuro-text {
+        font-size: 2.5rem;
+    }
+    
+    .matrix-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .matrix-filter {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .neuro-text {
+        font-size: 1.8rem;
+    }
+    
+    .matrix-grid {
+        grid-template-columns: 1fr;
+    }
+}

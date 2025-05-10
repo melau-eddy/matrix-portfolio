@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | NeoDev - Billion Dollar Tech Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <div class="matrix-background"></div>
+    
+    <div class="terminal-decoration">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="terminal-btn red"></span>
+                <span class="terminal-btn yellow"></span>
+                <span class="terminal-btn green"></span>
+            </div>
+            <span class="terminal-title">root@neodev:~</span>
+        </div>
+        <div class="terminal-content">
+            <div class="terminal-line">Last login: <span id="terminal-date"></span> from 192.168.1.1</div>
+            <div class="terminal-line">neodev@portfolio:~$ <span class="typing" data-text="initiate_contact_sequence.sh --secure --encrypted"></span></div>
+            <div class="terminal-line blinking-cursor">_</div>
+        </div>
+    </div>
+    <div class="nav-back">
+        <a href="index.html" class="cyber-button">
+            <span class="button-text">RETURN_TO_TERMINAL</span>
+            <span class="button-glitch"></span>
+        </a>
+    </div>
+    <div class="container">
+        <header class="header">
+            <h1 class="glitch" data-text="CONTACT NEO">CONTACT NEO</h1>
+            <p class="subtitle">Initiate Secure Connection Sequence</p>
+            
+        </header>
+        
+
+        <div class="contact-grid">
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="input-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Your Name</label>
+                        <div class="underline"></div>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Your Email</label>
+                        <div class="underline"></div>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="subject" required>
+                        <label for="subject">Subject</label>
+                        <div class="underline"></div>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="message" rows="5" required></textarea>
+                        <label for="message">Your Encrypted Message</label>
+                        <div class="underline"></div>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Send Secure Transmission</span>
+                        <i class="fas fa-lock"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div class="skills-section">
+                <h2 class="skills-title">Core Competencies</h2>
+                <div class="skills-grid">
+                    <div class="skill-card" data-skill="ai">
+                        <div class="skill-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI/ML</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-skill="cyber">
+                        <div class="skill-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Cyber Security</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 98%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-skill="blockchain">
+                        <div class="skill-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h3>Blockchain</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-skill="cloud">
+                        <div class="skill-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Architecture</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 97%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Encrypted Comms</h4>
+                        <p>contact@neodev.tech</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-key"></i>
+                        <h4>PGP Key</h4>
+                        <p>0xABCDEF1234567890</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="status-bar">
+        <div class="status-item">
+            <span class="status-label">Connection:</span>
+            <span class="status-value secure">SECURE</span>
+        </div>
+        <div class="status-item">
+            <span class="status-label">Encryption:</span>
+            <span class="status-value">AES-256</span>
+        </div>
+        <div class="status-item">
+            <span class="status-label">Session ID:</span>
+            <span class="status-value" id="session-id"></span>
+        </div>
+    </div>
+
+    <script src="contact.js"></script>
+</body>
+</html>

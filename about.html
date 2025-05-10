@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Power Learn Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cyberpunk-style header -->
+    <header class="cyber-header">
+        <div class="glitch-text" data-text="About_Me.Exe">About_Me.Exe</div>
+        <div class="scanline"></div>
+    </header>
+
+    <!-- Main content with animated tech elements -->
+    <main class="about-container">
+        <!-- Animated avatar with holographic effect -->
+        <div class="holographic-avatar">
+            <div class="avatar-img"></div>
+            <div class="hologram-grid"></div>
+            <div class="hologram-line"></div>
+        </div>
+
+        <!-- Bio section with typing animation -->
+        <div class="bio-section">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="control close"></span>
+                    <span class="control minimize"></span>
+                    <span class="control maximize"></span>
+                    <span class="title">user@powerlearn: ~/about</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="typing-animation" id="typewriter"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech stats in hexagon grid -->
+        <div class="tech-stats">
+            <div class="hexagon-grid">
+                <div class="hexagon" data-skill="Python">
+                    <div class="hex-content">
+                        <i class="fab fa-python"></i>
+                        <span class="skill-level">90%</span>
+                    </div>
+                </div>
+                <div class="hexagon" data-skill="JavaScript">
+                    <div class="hex-content">
+                        <i class="fab fa-js"></i>
+                        <span class="skill-level">85%</span>
+                    </div>
+                </div>
+                <div class="hexagon" data-skill="Linux">
+                    <div class="hex-content">
+                        <i class="fab fa-linux"></i>
+                        <span class="skill-level">80%</span>
+                    </div>
+                </div>
+                <div class="hexagon" data-skill="Cybersecurity">
+                    <div class="hex-content">
+                        <i class="fas fa-shield-alt"></i>
+                        <span class="skill-level">75%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating binary code animation in background -->
+    <div class="binary-rain"></div>
+
+    <!-- Navigation back to terminal -->
+    <div class="nav-back">
+        <a href="index.html" class="cyber-button">
+            <span class="button-text">RETURN_TO_TERMINAL</span>
+            <span class="button-glitch"></span>
+        </a>
+    </div>
+
+    <script src="about.js"></script>
+</body>
+</html>

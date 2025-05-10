@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills | Quantum Developer Terminal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="skills.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Neuro-Interface Header -->
+    <header class="neuro-header">
+        <div class="neuro-text" data-text="SKILLS_MATRIX">SKILLS_MATRIX</div>
+        <div class="circuit-overlay"></div>
+        <div class="neon-pulse"></div>
+        
+    </header>
+
+    <div class="nav-back">
+        <a href="index.html" class="cyber-button">
+            <span class="button-text">RETURN_TO_TERMINAL</span>
+            <span class="button-glitch"></span>
+        </a>
+    </div>
+
+    <!-- Main Skills Dashboard -->
+    <main class="quantum-dashboard">
+        <!-- 3D Tech Sphere -->
+        <div class="tech-sphere-container">
+            <div id="tech-sphere"></div>
+            <div class="sphere-interface">
+                <div class="sphere-control">
+                    <span class="control-label">ROTATION_SPEED</span>
+                    <input type="range" min="0" max="10" value="3" id="rotation-control">
+                </div>
+                <div class="sphere-control">
+                    <span class="control-label">ZOOM</span>
+                    <input type="range" min="50" max="150" value="100" id="zoom-control">
+                </div>
+            </div>
+        </div>
+
+        <!-- Skill Matrix Grid -->
+        <div class="skill-matrix">
+            <div class="matrix-header">
+                <h3 class="matrix-title">TECHNOLOGY_PROFICIENCY</h3>
+                <div class="matrix-filter">
+                    <span class="filter-label">FILTER:</span>
+                    <button class="filter-btn active" data-filter="all">ALL</button>
+                    <button class="filter-btn" data-filter="frontend">FRONTEND</button>
+                    <button class="filter-btn" data-filter="backend">BACKEND</button>
+                    <button class="filter-btn" data-filter="cyber">CYBERSEC</button>
+                </div>
+            </div>
+            
+            <div class="matrix-grid">
+                <!-- Skill Card 1 -->
+                <div class="skill-card" data-category="backend" data-skill="Python">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                        <div class="icon-halo"></div>
+                    </div>
+                    <div class="skill-info">
+                        <h4 class="skill-name">PYTHON</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 92%"></div>
+                            <span class="skill-percent">92%</span>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="tag">Django</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">Automation</span>
+                        </div>
+                    </div>
+                    <div class="skill-3d" data-model="python"></div>
+                </div>
+                
+                <!-- Skill Card 2 -->
+                <div class="skill-card" data-category="frontend" data-skill="JavaScript">
+                    <div class="skill-icon">
+                        <i class="fab fa-js"></i>
+                        <div class="icon-halo"></div>
+                    </div>
+                    <div class="skill-info">
+                        <h4 class="skill-name">JAVASCRIPT</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%"></div>
+                            <span class="skill-percent">88%</span>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">TypeScript</span>
+                        </div>
+                    </div>
+                    <div class="skill-3d" data-model="javascript"></div>
+                </div>
+                
+                <!-- 10+ more skill cards following same pattern -->
+            </div>
+        </div>
+
+        <!-- Neural Network Visualization -->
+        <div class="neural-network">
+            <div class="network-header">
+                <h3 class="network-title">SKILL_SYNERGY_NETWORK</h3>
+                <div class="network-legend">
+                    <span class="legend-item"><span class="legend-dot frontend"></span> FRONTEND</span>
+                    <span class="legend-item"><span class="legend-dot backend"></span> BACKEND</span>
+                    <span class="legend-item"><span class="legend-dot cyber"></span> CYBERSEC</span>
+                </div>
+            </div>
+            <canvas id="neural-canvas"></canvas>
+        </div>
+    </main>
+
+    <!-- DNA Strand Footer -->
+    <footer class="dna-footer">
+        <div class="dna-container">
+            <div class="dna-strand">
+                <div class="dna-node" data-skill="AI"></div>
+                <div class="dna-node" data-skill="ML"></div>
+                <div class="dna-node" data-skill="Blockchain"></div>
+                <!-- More nodes -->
+            </div>
+            <div class="dna-connectors"></div>
+        </div>
+        <div class="dna-label">TECHNOLOGY_DNA_SEQUENCE</div>
+    </footer>
+
+    <!-- Cyber Console -->
+    <div class="cyber-console">
+        <div class="console-header">
+            <span class="console-title">SKILL_ANALYSIS_CONSOLE</span>
+            <div class="console-controls">
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+                <span class="control close"></span>
+            </div>
+        </div>
+        <div class="console-body">
+            <div class="console-output" id="skill-analysis">
+                > INITIALIZING SKILL ASSESSMENT MATRIX...
+                > LOADING QUANTUM ANALYSIS MODULES...
+                > SYSTEM READY FOR INTERACTION
+            </div>
+            <div class="console-input">
+                <span class="prompt">root@skills-matrix:~#</span>
+                <input type="text" id="console-cmd" autocomplete="off" spellcheck="false">
+            </div>
+        </div>
+    </div>
+
+    <script src="three.min.js"></script>
+    <script src="skills.js"></script>
+</body>
+</html>

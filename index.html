@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melau(Eddy) | Power Learn Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Profile Section -->
+    <!-- Profile Section - Updated Structure -->
+    <div class="profile-section">
+        <div class="profile-picture-container">
+            <div class="profile-picture">
+                <img src="images/brightone.png" alt="Britania-cipher" id="profile-img">
+            </div>
+            <div class="terminal-decoration">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-btn red"></span>
+                        <span class="terminal-btn yellow"></span>
+                        <span class="terminal-btn green"></span>
+                    </div>
+                    <span class="terminal-title">user@profile:~</span>
+                </div>
+                <div class="terminal-content">
+                    <div class="terminal-line">profile_image.jpg --verified</div>
+                    <div class="terminal-line blinking-cursor">_</div>
+                </div>
+            </div>
+        </div>
+        <div class="profile-info">
+            <h1>Melau Eddy</h1>
+            <p class="title">Power Learn Intern</p>
+        </div>
+    </div>
+
+    <!-- Main Terminal Window -->
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div class="terminal-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+            </div>
+            <div class="terminal-title">user@powerlearn:~</div>
+        </div>
+        
+        <div class="terminal-body" id="terminal">
+            <div class="terminal-line">
+                <span class="user">user@powerlearn</span>:<span class="path">~</span>$ <span class="command">cat about_me.txt</span>
+            </div>
+            <div class="terminal-output" id="output">
+                <p>Welcome to my Power Learn Internship Portfolio.</p>
+                <p>I am a passionate developer specializing in Cyber Security And AI.</p>
+                <p>Type <span class="highlight">'help'</span> to see available commands.</p>
+            </div>
+            <div class="terminal-input">
+                <span class="user">user@powerlearn</span>:<span class="path">~</span>$ 
+                <input type="text" id="command-input" autofocus spellcheck="false">
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav id="main-nav">
+        <ul>
+            <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="skills.html"><i class="fas fa-code"></i> Skills</a></li>
+            <li><a href="projects.html"><i class="fas fa-folder"></i> Projects</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoDev | Billion Dollar Tech Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="matrix-background"></div>
+    
+    <div class="container">
+        
+        <section class="profile-section">
+            <div class="profile-picture">
+                <div class="picture-frame">
+                    <img src="images/brightone.png" alt="Brightone Britania" id="profile-img">
+                    <div class="matrix-overlay"></div>
+                </div>
+                <div class="terminal-decoration">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="terminal-btn red"></span>
+                            <span class="terminal-btn yellow"></span>
+                            <span class="terminal-btn green"></span>
+                        </div>
+                        <span class="terminal-title">root@neodev:~</span>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="terminal-line">Last login: <span id="terminal-date"></span> from 192.168.1.1</div>
+                        <div class="terminal-line">neodev@portfolio:~$ <span class="typing" data-text="load_profile.sh --visualize"></span></div>
+                        <div class="terminal-line blinking-cursor">_</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="profile-info">
+                <h1 class="glitch" data-text="NEO_DEV">NEO_DEV</h1>
+                <p class="title">Senior Cyber Architect & AI Researcher</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fas fa-key"></i></a>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="main-terminal">
+            <div class="terminal-header">
+                <div class="terminal-controls">
+                    <span class="control close"></span>
+                    <span class="control minimize"></span>
+                    <span class="control maximize"></span>
+                </div>
+                <div class="terminal-title">user@neodev:~/portfolio</div>
+            </div>
+            
+            <div class="terminal-body" id="terminal">
+                <div class="terminal-line">
+                    <span class="user">user@neodev</span>:<span class="path">~/portfolio</span>$ <span class="command">cat welcome.txt</span>
+                </div>
+                <div class="terminal-output" id="output">
+                    <p>Welcome to my cyber domain.</p>
+                    <p>I architect secure systems and develop cutting-edge AI solutions.</p>
+                    <p>Type <span class="highlight">'help'</span> to see available commands.</p>
+                </div>
+                <div class="terminal-input">
+                    <span class="user">user@neodev</span>:<span class="path">~/portfolio</span>$ 
+                    <input type="text" id="command-input" autofocus spellcheck="false">
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="status-section">
+            <div class="status-card">
+                <i class="fas fa-code"></i>
+                <h3>15+</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="status-card">
+                <i class="fas fa-project-diagram"></i>
+                <h3>87</h3>
+                <p>Projects Completed</p>
+            </div>
+            <div class="status-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>100%</h3>
+                <p>Systems Secured</p>
+            </div>
+            <div class="status-card">
+                <i class="fas fa-robot"></i>
+                <h3>24/7</h3>
+                <p>AI Monitoring</p>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Global Status Bar -->
+    <div class="status-bar">
+        <div class="status-item">
+            <span class="status-label">System:</span>
+            <span class="status-value secure">OPERATIONAL</span>
+        </div>
+        <div class="status-item">
+            <span class="status-label">Threat Level:</span>
+            <span class="status-value">GREEN</span>
+        </div>
+        <div class="status-item">
+            <span class="status-label">Session ID:</span>
+            <span class="status-value" id="session-id"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> -->

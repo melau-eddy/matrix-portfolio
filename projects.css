@@ -1,0 +1,718 @@
+/* Quantum Projects Matrix */
+:root {
+    --quantum-blue: #00f0ff;
+    --matrix-green: #00ff41;
+    --neon-pink: #ff2d75;
+    --cyber-purple: #9d00ff;
+    --dark-matter: #0a0a12;
+    --star-dust: rgba(255,255,255,0.1);
+    --terminal-bg: rgba(10,10,20,0.95);
+}
+
+body {
+    background-color: var(--dark-matter);
+    color: var(--matrix-green);
+    font-family: 'JetBrains Mono', monospace;
+    overflow-x: hidden;
+}
+
+/* Neuro-Interface Header */
+.neuro-header {
+    text-align: center;
+    padding: 3rem 0;
+    position: relative;
+    overflow: hidden;
+    background: 
+        radial-gradient(circle at center, 
+            rgba(0,240,255,0.1) 0%, 
+            transparent 70%);
+    border-bottom: 1px solid var(--quantum-blue);
+}
+
+.neuro-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--quantum-blue);
+    text-shadow: 0 0 20px rgba(0,240,255,0.7);
+    position: relative;
+    z-index: 2;
+    animation: neuro-pulse 4s infinite alternate;
+}
+
+.circuit-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(var(--star-dust) 1px, transparent 1px),
+        linear-gradient(90deg, var(--star-dust) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.neon-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, 
+        rgba(0,240,255,0.3) 0%, 
+        transparent 70%);
+    border-radius: 50%;
+    animation: neon-pulse 6s infinite alternate;
+    z-index: 0;
+}
+
+.project-counter {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.5);
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid var(--matrix-green);
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.counter-number {
+    font-size: 2rem;
+    color: var(--quantum-blue);
+    line-height: 1;
+}
+
+.counter-label {
+    font-size: 0.7rem;
+    color: var(--matrix-green);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Quantum Navigation Sphere */
+.quantum-nav {
+    position: relative;
+    height: 300px;
+    margin: 2rem auto;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+}
+
+#nav-sphere {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.nav-interface {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.7);
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid var(--neon-pink);
+    display: flex;
+    gap: 20px;
+    z-index: 10;
+}
+
+.nav-control {
+    flex: 1;
+}
+
+.control-label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--matrix-green);
+    font-size: 0.8rem;
+}
+
+select {
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    border: 1px solid var(--quantum-blue);
+    color: white;
+    padding: 8px;
+    border-radius: 3px;
+    font-family: 'JetBrains Mono', monospace;
+    cursor: pointer;
+}
+
+select option {
+    background: var(--dark-matter);
+}
+
+/* Project Matrix Grid */
+.project-matrix {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 30px;
+    padding: 2rem;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: var(--terminal-bg);
+    border: 1px solid rgba(0,240,255,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0,240,255,0.3);
+    border-color: var(--quantum-blue);
+}
+
+.project-hologram {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(0,240,255,0.05) 0%, 
+        rgba(0,240,255,0) 50%, 
+        rgba(0,240,255,0.05) 100%);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-hologram {
+    opacity: 1;
+}
+
+.project-media {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Screenshot Gallery */
+.screenshot-gallery {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.main-screenshot {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease;
+}
+
+.gallery-thumbnails {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+}
+
+.thumbnail {
+    width: 60px;
+    height: 40px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.thumbnail:hover, .thumbnail.active {
+    border-color: var(--quantum-blue);
+    transform: translateY(-5px);
+}
+
+/* Embedded Demo */
+.embedded-demo {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.embedded-demo iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.demo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.embedded-demo:hover .demo-overlay {
+    opacity: 1;
+}
+
+.demo-launch {
+    background: rgba(0,240,255,0.2);
+    color: white;
+    border: 1px solid var(--quantum-blue);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'JetBrains Mono', monospace;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.demo-launch:hover {
+    background: var(--quantum-blue);
+    color: black;
+}
+
+/* Video Showcase */
+.video-showcase {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.video-preview {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-button {
+    width: 60px;
+    height: 60px;
+    background: rgba(0,240,255,0.5);
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-button:hover {
+    background: var(--quantum-blue);
+    transform: scale(1.1);
+}
+
+.video-player {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.video-player iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Media Controls */
+.media-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+    z-index: 2;
+}
+
+.media-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--matrix-green);
+    padding: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.media-btn.active, .media-btn:hover {
+    background: rgba(0,240,255,0.2);
+    color: var(--quantum-blue);
+}
+
+/* Project Info */
+.project-info {
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.project-header {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.project-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    margin: 0;
+}
+
+.project-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.8rem;
+    color: var(--matrix-green);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.project-description {
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tech-tag {
+    background: rgba(0,240,255,0.1);
+    color: var(--quantum-blue);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 10px;
+}
+
+.project-link {
+    background: rgba(0,240,255,0.1);
+    color: var(--quantum-blue);
+    padding: 8px 15px;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    background: var(--quantum-blue);
+    color: black;
+}
+
+/* Project Console */
+.project-console {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10,10,20,0.9);
+    border-top: 1px solid var(--quantum-blue);
+    box-shadow: 0 -5px 30px rgba(0,240,255,0.2);
+    z-index: 1000;
+    transform: translateY(calc(100% - 40px));
+    transition: transform 0.3s ease;
+}
+
+.project-console.active {
+    transform: translateY(0);
+}
+
+.console-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.console-title {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--matrix-green);
+    font-size: 0.9rem;
+}
+
+.console-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.console-controls .control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.control.minimize { background: var(--matrix-green); }
+.control.maximize { background: var(--quantum-blue); }
+.control.close { background: var(--neon-pink); }
+
+.console-body {
+    padding: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.console-output {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--matrix-green);
+    line-height: 1.5;
+    margin-bottom: 15px;
+    white-space: pre-wrap;
+}
+
+.console-input {
+    display: flex;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.prompt {
+    color: var(--quantum-blue);
+    margin-right: 10px;
+}
+
+#project-cmd {
+    background: transparent;
+    border: none;
+    color: var(--matrix-green);
+    font-family: 'JetBrains Mono', monospace;
+    flex: 1;
+    outline: none;
+    caret-color: var(--quantum-blue);
+}
+
+/* Binary Matrix Background */
+.binary-matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/binary-matrix.png');
+    opacity: 0.03;
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+
+
+
+:root {
+    --cyber-blue: #00f0ff;
+    --cyber-pink: #ff2d75;
+    --cyber-purple: #9d00ff;
+    --matrix-green: #00ff41;
+    --dark-bg: #0a0a12;
+}
+
+
+/* Cyber Button */
+.cyber-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--cyber-blue);
+    border: 1px solid var(--cyber-blue);
+    font-family: 'Share Tech Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.cyber-button:hover {
+    background: rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 10px var(--cyber-blue);
+}
+
+.button-glitch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--cyber-pink),
+        var(--cyber-purple),
+        transparent
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cyber-button:hover .button-glitch {
+    opacity: 0.2;
+    animation: glitch-effect 1s infinite;
+}
+
+/* Animations */
+@keyframes glitch {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+}
+
+@keyframes glitch-effect {
+    0% { transform: translate(0); clip-path: inset(0 0 0 0); }
+    20% { transform: translate(-5px, 5px); clip-path: inset(20% 0 60% 0); }
+    40% { transform: translate(5px, -5px); clip-path: inset(10% 0 30% 0); }
+    60% { transform: translate(-5px, 5px); clip-path: inset(40% 0 20% 0); }
+    80% { transform: translate(5px, -5px); clip-path: inset(10% 0 60% 0); }
+    100% { transform: translate(0); clip-path: inset(0 0 0 0); }
+}
+
+@keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+}
+
+@keyframes hologram-pulse {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.7; }
+}
+
+@keyframes hologram-scan {
+    0% { top: -100%; }
+    100% { top: 100%; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .glitch-text {
+        font-size: 2rem;
+    }
+    
+    .terminal-window {
+        width: 95%;
+    }
+    
+    .hexagon {
+        width: 100px;
+        height: 120px;
+    }
+}
+
+
+
+
+
+
+/* Animations */
+@keyframes neuro-pulse {
+    0% { opacity: 0.8; text-shadow: 0 0 10px var(--quantum-blue); }
+    100% { opacity: 1; text-shadow: 0 0 30px var(--quantum-blue); }
+}
+
+@keyframes neon-pulse {
+    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.3; }
+    100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.6; }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .project-matrix {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .neuro-text {
+        font-size: 2.5rem;
+    }
+    
+    .quantum-nav {
+        height: 200px;
+    }
+    
+    .nav-interface {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .neuro-text {
+        font-size: 1.8rem;
+    }
+    
+    .project-counter {
+        top: 10px;
+        right: 10px;
+        padding: 5px 10px;
+    }
+    
+    .counter-number {
+        font-size: 1.5rem;
+    }
+    
+    .counter-label {
+        font-size: 0.6rem;
+    }
+}
