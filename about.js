@@ -3,13 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const typewriter = document.getElementById('typewriter');
     const bioText = `
         > NAME: Melau Eddy
-        > ROLE: Power Learn Intern
+        > ROLE: CDED developer
+        > EMAIL: melaueddy@gmail.com
         > SPECIALIZATION: AI and Software Development
         > LOCATION: Dedan Kimathi University of Technology, Nyeri county
         > 
         > BIO:
-        > Passionate about technology and cybersecurity.
-        > Currently mastering full-stack development.
+        > Passionate about technology and hardware development.
+        > Currently mastering hardware development.
         > Enjoys solving complex problems with code.
         > 
         > TYPE 'help' IN TERMINAL FOR COMMANDS
